@@ -87,8 +87,9 @@ export default {
           }
         } else {
           localStorage.setItem("token", response.data.data.token);
+          localStorage.setItem("userName", response.data.data.user.name);
           toast.success("Login successful!");
-          router.push("/user");
+          router.push("/home");
         }
       } catch (error) {
         console.error("Login failed:", error);

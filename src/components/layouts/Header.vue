@@ -24,6 +24,7 @@ const userName = localStorage.getItem('userName');
 const token = localStorage.getItem('token');
 const toast = useToast(toastOptions);
 
+// handle logout request
 const logout = async () => {
   try {
     const response = await axios.post(`${BASE_URL}/logout`, null, {

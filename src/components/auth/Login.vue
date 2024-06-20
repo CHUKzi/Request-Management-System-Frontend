@@ -67,7 +67,8 @@ export default {
     const router = useRouter();
     const toast = useToast(toastOptions);
     const errors = ref({});
-
+    
+    // Handle Login request
     const login = async () => {
       try {
         const response = await axios.post(`${BASE_URL}/login`, {

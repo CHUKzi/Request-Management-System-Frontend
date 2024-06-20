@@ -73,7 +73,7 @@ router.beforeEach(async (to, from, next) => {
   }
 });
 
-// After each route change, update the document title
+// Update title
 router.afterEach((to) => {
   const defaultTitle = "Request Management System";
   const routeTitle = to.meta.title ? `${to.meta.title} | ${defaultTitle}` : defaultTitle;

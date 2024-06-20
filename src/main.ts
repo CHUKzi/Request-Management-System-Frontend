@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css'
 import 'vue-toast-notification/dist/theme-bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import VueGoodTablePlugin from 'vue-good-table';
 

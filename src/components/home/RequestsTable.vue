@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import DataTable from 'datatables.net-vue3';
-import DataTablesCore from 'datatables.net-bs5';
+import { ref, onMounted } from "vue";
+import axios from "axios";
+import DataTable from "datatables.net-vue3";
+import DataTablesCore from "datatables.net-bs5";
 import { BASE_URL } from "@/config.js";
+import CreateRequest from "../home/CreateRequest.vue";
+import { useRouter } from "vue-router";
 
 DataTable.use(DataTablesCore);
 
 const columns = [
-  { data: 'id' },
-  { data: 'created_on' },
-  { data: 'location' },
-  { data: 'service' },
-  { data: 'status' },
-  { data: 'priority' },
-  { data: 'department' },
-  { data: 'request_by' },
-  { data: 'assigned_to' },
+  { data: "id" },
+  { data: "created_on" },
+  { data: "location" },
+  { data: "service" },
+  { data: "status" },
+  { data: "priority" },
+  { data: "department" },
+  { data: "request_by" },
+  { data: "assigned_to" },
 ];
+const router = useRouter();
+
+const CreateRequests = () => {
+  router.push("/create");
+};
 
 const requests = ref([]);
 
@@ -26,25 +33,30 @@ onMounted(() => {
 });
 
 const fetchData = () => {
-  const token = localStorage.getItem('token');
-  axios.get(`${BASE_URL}/requests`, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  })
-  .then(response => {
-    if (response.data.success) {
-      requests.value = response.data.data;
-    }
-  })
-  .catch(error => {
-    console.error("There was an error retrieving the data!", error);
-  });
+  const token = localStorage.getItem("token");
+  axios
+    .get(`${BASE_URL}/requests`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      if (response.data.success) {
+        requests.value = response.data.data;
+      }
+    })
+    .catch((error) => {
+      console.error("There was an error retrieving the data!", error);
+    });
 };
-
 </script>
 
 <template>
+  <div class="text-sm-end">
+    <button @click="CreateRequests" type="button" class="btn btn-dark">
+      Create Request
+    </button>
+  </div>
   <div>
     <DataTable
       :columns="columns"
@@ -71,7 +83,6 @@ const fetchData = () => {
     </DataTable>
   </div>
 </template>
-
 <style scoped>
 /* Add any scoped styles here */
 </style>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '../views/LoginView.vue';
 import HomeView from '../views/HomeView.vue';
+import CreateView from '../views/CreateView.vue';
 import axios from 'axios';
 import { BASE_URL } from "@/config.js";
 const router = createRouter({
@@ -15,6 +16,12 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/create',
+      name: 'create',
+      component: CreateView,
       meta: { requiresAuth: true }
     }
   ]

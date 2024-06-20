@@ -6,6 +6,7 @@
           <div class="card-body pt-0">
             <div class="mt-5 text-center">
               <h2>Login</h2>
+              <div class="text-muted">Request Management System</div>
             </div>
             <form @submit.prevent="login">
               <div class="mb-3">

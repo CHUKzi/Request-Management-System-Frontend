@@ -19,6 +19,7 @@
     "datatables.net-bs5": "^2.0.8",
     "datatables.net-dt": "^2.0.8",
     "datatables.net-vue3": "^3.0.1",
+    "sweetalert2": "^11.12.0",
     "vue": "^3.4.29",
     "vue-datatable-component": "^1.0.10",
     "vue-datatables": "^0.1.4",

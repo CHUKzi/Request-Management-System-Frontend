@@ -198,13 +198,11 @@ const errors = ref({});
 const router = useRouter();
 const toast = useToast(toastOptions);
 
-const BackHome = () => {
-  router.push('/home');
-};
 
+// handle store request
 const handleSubmit = async () => {
   try {
-    errors.value = {}; // Clear previous errors
+    errors.value = {};
 
     const response = await axios.post(
       `${BASE_URL}/requests/store`,
@@ -234,8 +232,11 @@ const handleSubmit = async () => {
     console.error("Request creation error:", error);
   }
 };
+
+const BackHome = () => {
+  router.push('/home');
+};
 </script>
 
 <style scoped>
-/* Add scoped styles here */
 </style>

@@ -1,8 +1,8 @@
 <template>
   <main>
-    <TheWelcome />
+    <LoginPage />
   </main>
 </template>
 <script setup lang="ts">
-import TheWelcome from "../components/home/Home.vue";
+import LoginPage from "../components/auth/Login.vue";
 </script>
